@@ -1,0 +1,46 @@
+﻿@model MealVault.Web.ViewModels.MealViewModel
+@{
+    ViewData["Title"] = "Meals";
+}
+
+<div class="row">
+    @foreach (var meal in Model.MealsList)
+    {
+        <div class="col-sm-4">
+            <div class="card mb-4 shadow text-center">
+                <div class="card-header">
+                    <h4><strong> @meal.Name</strong></h4>
+                </div>
+                <div class="card-body">
+                    <div class="row ">
+                        <div class="float-right">
+                            <div class="pretty p-icon p-toggle p-plain">
+                                <input type="checkbox" onchange="addMealToFavorites(@meal.ID, this)" @(meal.IsFavorite == true ? "checked" : "") id="favoriteCheckbox"/>
+                                <div class="state p-on p-o">
+                                    <i class="icon mdi mdi-heart"></i>
+                                </div>
+                                <div class="state p-off">
+                                    <i class="icon mdi mdi-heart-outline"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <img src="@Url.Content(meal.Picture)" style="width: 75%; height: 75%;" alt="Alternate Text" class="img-thumbnail rounded mx-auto mb-auto" />
+                    </div>
+                    @*<div class="text-center">
+                        <label class="col-form-label">Area: @meal.Area</label>
+                    </div>
+                    <div class="text-center">
+                        <label class="col-form-label" style="max-width: 140px; word-wrap: break-word">Tags: @meal.Tags</label>
+                    </div>*@
+                    <br />
+                    <div class="text-center">
+                        <a type="button" class="btn btn-primary" asp-controller="Meal" asp-action="MealInformation" asp-route-id="@meal.ID">View Meal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

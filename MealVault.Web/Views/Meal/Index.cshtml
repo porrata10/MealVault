@@ -1,0 +1,98 @@
+﻿@model MealVault.Web.ViewModels.MealViewModel
+@{
+    ViewData["Title"] = "MealsList";
+}
+
+
+@*<div class="d-flex align-items-center">
+    <strong>Loading...</strong>
+    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+</div>*@
+
+    <div class="text-center">
+        <h1 class="display-4">Meals List</h1>
+    </div>
+
+<form asp-action="Index" asp-controller="Meal" method="post">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group form-inline row">
+                        <div class="col-4">
+                            <select asp-for="Area" asp-items="@Model.AreasList" class="select2 col-md-12">
+                                <option value="" disabled selected>Select Area</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <select asp-for="Category" asp-items="@Model.CategoriesList" class="select2 col-md-12">
+                                <option value="" disabled selected>Select Category</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <select asp-for="MainIngredient" asp-items="@Model.IngredientsList" class="select2 col-md-12">
+                                <option value="" disabled selected>Select Ingredient</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-primary col-md-2 mt-3 float-right" value="Search" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<br />
+<br />
+@await Html.PartialAsync("/Views/Meal/Partials/_MealList.cshtml", Model)
+
+
+@section Scripts {
+
+<script>
+
+    $(document).ready(function () {
+        $('#Area').select2();
+        $('#Category').select2();
+        $('#MainIngredient').select2();
+       
+    });
+
+    $(".heart.fa").click(function() {
+  $(this).toggleClass("fa-heart fa-heart-o");
+    });
+
+    function addMealToFavorites(mealID, favoriteCheckbox) {
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("AddMealToFavorites", "Meal")',
+            async: true,
+            data: {
+                id: mealID,
+                isFavoriteCheckoxChecked: favoriteCheckbox.checked
+            },
+
+        }).done(function (data) {
+            Swal.fire({
+                type: "success",
+                title: data.message,
+                timer: 3000,
+                showConfirmationButton: false
+            });
+
+        }).fail(function (jqXHR) {
+            Swal.fire({
+                type: "warning",
+                title: jqXHR.responseText,
+                confirmButtonColor: "#00843d"
+            });
+        });
+    }
+</script>
+}

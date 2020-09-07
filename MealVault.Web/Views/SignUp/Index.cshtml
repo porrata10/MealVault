@@ -1,0 +1,57 @@
+﻿@model MealVault.Web.ViewModels.SignUpViewModel
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+
+<h1 class="text-center">Meal Vault</h1>
+<br />
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="card shadow mb-5">
+            <div class="card-body">
+                <h4 class="card-title text-center mb-4 mt-1">Sign Up</h4>
+                <hr>
+                <form asp-controller="SignUp" asp-action="Index" method="post">
+                    <div class="form-group">
+                        <label asp-for="FirstName">First Name</label>
+                        <input type="text" asp-for="FirstName" class="form-control" placeholder="ex. John">
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LastName">Last Name</label>
+                        <input type="text" asp-for="LastName" class="form-control" placeholder="ex. Doe">
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MobileNumber">Mobile Number</label>
+                        <input type="text" asp-for="MobileNumber" class="form-control" placeholder="(787) *** ****">
+                        <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Username">Username</label>
+                        <input type="text" asp-for="Username" class="form-control" placeholder="mealKnight007">
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password">Password</label>
+                        <input type="password" asp-for="Password" class="form-control" placeholder="Password">
+                        <span asp-validation-for="Password" class="text-danger text-wrap"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConfirmPassword">Confirm Password</label>
+                        <input type="password" asp-for="ConfirmPassword" class="form-control" placeholder="Please confirm password">
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Sign Up   </button>
+                        <a asp-controller="Login" asp-action="Index" class="btn btn-outline-secondary btn-block"> Login </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-3"></div>
+</div>

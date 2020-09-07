@@ -1,0 +1,55 @@
+﻿@model MealVault.Web.ViewModels.MealInformationViewModel
+@{
+    ViewData["Title"] = "Meal";
+}
+
+
+<div class="container-recipe">
+    <div class="row">
+        <div class="form-inline mx-auto">
+            <div class="col-lg-6">
+                <iframe type="text/html" src="http://www.youtube.com/embed/@Model.MealInformation.Video" frameborder="0" style="width: 350px; height: 300px;" class="mr-2"></iframe>
+            </div>
+            <div class="col-lg-6">
+                <h1>@Model.MealInformation.Name</h1>
+                <div class="align-content-lg-start">
+                    <h4>Area: @Model.MealInformation.Area</h4>
+                    <h4>Category: @Model.MealInformation.Category</h4>
+                    <h4>Tags: @Model.MealInformation.Tags</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="mb-7 m-7">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-inline">
+                    <div class="col-md-10">
+                        <h3>Ingredients</h3>
+                        <ol>
+                            @foreach (var ingredientOrMeasure in Model.MealInformation.IngredientsList.Zip(Model.MealInformation.MeasuresList, Tuple.Create))
+                            {
+                                // Ingredient                       //Measure
+                            <li>@ingredientOrMeasure.Item2  @ingredientOrMeasure.Item1</li>
+                            }
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-inline">
+                    <div class="col-md-10">
+                        <h3>Instructions</h3>
+                        <ol>
+                            @foreach (var intruction in Model.MealInformation.InstructionsList)
+                            {
+                                <li>@intruction</li>
+                            }
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

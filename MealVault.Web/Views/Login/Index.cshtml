@@ -1,0 +1,37 @@
+﻿@model MealVault.Web.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+        
+     <h1 class="text-center">Meal Vault</h1>
+     <br />
+     <form asp-controller="Login" asp-action="Index" method="post">
+         <div class="row">
+             <div class="col-3"></div>
+             <div class="col-6">
+                 <div class="card shadow mb-5">
+                     <div class="card-body">
+                         <h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
+                         <hr>
+                             <div class="form-group">
+                                 <label asp-for="Username">Username</label>
+                                 <input type="text" asp-for="Username" class="form-control" placeholder="Username">
+                                 <span asp-validation-for="Username" class="text-danger"></span>
+                             </div>
+                             <div class="form-group">
+                                 <label asp-for="Password">Password</label>
+                                 <input type="password" asp-for="Password" class="form-control" placeholder="Password">
+                                 <span asp-validation-for="Password" class="text-danger"></span>
+                             </div>
+                             <br />
+                             <div class="form-group">
+                                 <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+                                 <a asp-controller="SignUp" asp-action="Index" class="btn btn-outline-secondary  btn-block"> Sign Up  </a>
+                             </div>
+                             <p class="text-center"><a href="#" class="btn btn-link">Forgot password?</a></p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-3"></div>
+         </div>
+     </form>

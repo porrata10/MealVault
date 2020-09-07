@@ -1,0 +1,50 @@
+﻿@model MealVault.Web.ViewModels.MealViewModel
+
+@{
+    ViewData["Title"] = "Favorites";
+}
+
+@await Html.PartialAsync("/Views/Meal/Partials/_MealList.cshtml", Model)
+
+
+@section Scripts {
+
+    <script>
+
+    $(".heart.fa").click(function() {
+  $(this).toggleClass("fa-heart fa-heart-o");
+    });
+
+    function addMealToFavorites(mealID) {
+
+        var checkbox = document.querySelector("#favoriteCheckbox");
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("AddMealToFavorites", "Meal")',
+            async: true,
+            data: {
+                id: mealID,
+                isFavoriteCheckoxChecked: favoriteCheckbox.checked
+            },
+
+        }).done(function (data) {
+            Swal.fire({
+                type: "success",
+                title: data.message,
+                timer: 3000,
+                showConfirmationButton: false
+            });
+
+            window.location.reload();
+
+        }).fail(function (jqXHR) {
+            Swal.fire({
+                type: "warning",
+                title: jqXHR.responseText,
+                confirmButtonColor: "#00843d"
+            });
+        });
+    }
+    </script>
+}

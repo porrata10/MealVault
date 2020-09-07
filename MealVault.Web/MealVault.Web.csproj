@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MealVault.Entities\MealVault.Entities.csproj" />
+    <ProjectReference Include="..\MealVault.Services\MealVault.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\materialdesig-icons\css\" />
+    <Folder Include="wwwroot\lib\materialdesig-icons\js\" />
+    <Folder Include="wwwroot\lib\select2\css\" />
+    <Folder Include="wwwroot\lib\select2\js\" />
+    <Folder Include="wwwroot\lib\sweetalert2\css\" />
+    <Folder Include="wwwroot\lib\sweetalert2\js\" />
+  </ItemGroup>
+
+</Project>

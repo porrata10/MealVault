@@ -1,0 +1,114 @@
+﻿body {
+    background-color: #7c5a34;
+}
+
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #00b6a9;
+    border-color: #00b6a9;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #e5c793;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+b, strong{
+    color: #7c5a34;
+}
+
+.container-recipe {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #e5c793;
+    border-radius: 25px;
+}
+
+.card-recipe {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #eebb4e;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+h3 {
+    color: #7c5a34
+}
+
+h1 {
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #606058;
+    border-color: #606058;
+}
+
+.btn-outline-secondary {
+    color: #606058;
+    border-color: #606058;
+}
+
+    .btn-outline-secondary:hover {
+        color: #fff;
+        background-color: #606058;
+        border-color: #606058;
+    }
+
+.card-title {
+    color: white;
+}
+
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    color: #eebb4e;
+}
+
+/*
+.heart {
+    font-size: 25px;
+    color: red;
+}*/
+
+.mdi-heart {
+    color: red;
+}
+
+.icon.mdi.mdi-heart-outline {
+    border-color: red;
+    color: red;
+}

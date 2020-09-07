@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MealVault.Web", "MealVault.Web\MealVault.Web.csproj", "{458360C6-E5E6-42AD-92EB-E37027F3B243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MealVault.Entities", "MealVault.Entities\MealVault.Entities.csproj", "{B7CC42A5-A847-4B85-8D4C-D39CDA6FD17F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MealVault.Services", "MealVault.Services\MealVault.Services.csproj", "{D3ED5E5C-6BDA-489C-8F7C-6C7B50F36386}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{458360C6-E5E6-42AD-92EB-E37027F3B243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458360C6-E5E6-42AD-92EB-E37027F3B243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458360C6-E5E6-42AD-92EB-E37027F3B243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458360C6-E5E6-42AD-92EB-E37027F3B243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7CC42A5-A847-4B85-8D4C-D39CDA6FD17F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7CC42A5-A847-4B85-8D4C-D39CDA6FD17F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7CC42A5-A847-4B85-8D4C-D39CDA6FD17F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7CC42A5-A847-4B85-8D4C-D39CDA6FD17F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3ED5E5C-6BDA-489C-8F7C-6C7B50F36386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3ED5E5C-6BDA-489C-8F7C-6C7B50F36386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3ED5E5C-6BDA-489C-8F7C-6C7B50F36386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3ED5E5C-6BDA-489C-8F7C-6C7B50F36386}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26570582-69B8-4AEB-BB71-CE90AC37A614}
+	EndGlobalSection
+EndGlobal
